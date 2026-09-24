@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "skills": {
+    "animate": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/animate/SKILL.md",
+      "computedHash": "7598d33e7f60dd5c24531eaaa897621cc3bdb48e8050324211627973bc59c4ce"
+    },
+    "better-accessibility": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": "skills/better-accessibility/SKILL.md",
+      "computedHash": "019387b6da56d6f46a7c0f31ca274075a7c2592aed8289b53e89533d068c2d09"
+    },
+    "better-colors": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": "skills/better-colors/SKILL.md",
+      "computedHash": "1a6ff21c2ee760744f119cf6166df95ab4d05335c771c04a2ecb4c49cbbe5f1c"
+    },
+    "better-interface": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": "skills/better-interface/SKILL.md",
+      "computedHash": "406267c5782510d658a914899db2fc5eb3f5f7d51620cc4c86d7e26b217fdf24"
+    },
+    "better-layout": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": "skills/better-layout/SKILL.md",
+      "computedHash": "cb369bccb6a337c6fd2344dacccae0d1e12a1fb85b6eb9e726b76b18a95f16d6"
+    },
+    "better-typography": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": "skills/better-typography/SKILL.md",
+      "computedHash": "342f0e90fe46fd8a0111682ebd7e1ce526ede636d1a14d867d8dd3e2803670af"
+    },
+    "better-ui": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": "skills/better-ui/SKILL.md",
+      "computedHash": "d05cf568f197e47b15e71e21b19be1897eba2bf187ef7b0a341bc5ffaf3ffd4d"
+    },
+    "better-writing": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": "skills/better-writing/SKILL.md",
+      "computedHash": "225768480d8ba9cf6d00bb728d2a34dfb430d2134e25fc02dcedbba086b3bc5f"
+    },
+    "build-awwwards-quality-sites": {
+      "source": "MengTo/Skills",
+      "sourceType": "github",
+      "skillPath": "agent-skills/web-design/build-awwwards-quality-sites/SKILL.md",
+      "computedHash": "64017fdb07bf9b015ed25c4f286cde2238ab14b44e9a22ce2330167ee861f547"
+    },
+    "emil-design-eng": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/emil-design-eng/SKILL.md",
+      "computedHash": "51f2537e04d15911b41d78e2de24c36a0e26d41beae15e82a954fe5496a5eda9"
+    },
+    "find-animation-opportunities": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/find-animation-opportunities/SKILL.md",
+      "computedHash": "465d087c41768e4f14ed640dd049036009f613feb55baaa5831b68b33178f9d2"
+    },
+    "improve-animations": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/improve-animations/SKILL.md",
+      "computedHash": "524ea241e41d58bbdd8e288700fe24f5725e2a2f3ae7186ad7cebf9055058356"
+    },
+    "interface-review": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": "skills/interface-review/SKILL.md",
+      "computedHash": "692fc5f2cfc2ad08951ea68ee6f5db9c99b759fa46b18e53101cd50d51a94f3a"
+    },
+    "no-ai-design-slop": {
+      "source": "MengTo/Skills",
+      "sourceType": "github",
+      "skillPath": "agent-skills/ui/no-ai-design-slop/SKILL.md",
+      "computedHash": "b3b7e88b282f4e498c10592d77f3a55e65ad1b81979cf2a6b06aa07e84eed34f"
+    },
+    "review-animations": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/review-animations/SKILL.md",
+      "computedHash": "b4e5f0f4fe3e2743c85bf7354108f48a0b9d502cb20ef5c4a9c195da91f93736"
+    },
+    "web-design-engineer": {
+      "source": "ConardLi/garden-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-engineer/SKILL.md",
+      "computedHash": "82e5bd4aec3752c4dd8d22939c46d24f2fa4b03e24088420dabcd4ada0ef6884"
+    }
+  }
+}

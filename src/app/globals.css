@@ -1,26 +1,328 @@
+/* tastemaker stamp · mood: elegant/editorial (warm lean) · macrostructure: Editorial Index chapters
+   nav N3 · hero H2 · features F3 + F5 + F6 + F4 · proof P2 + P4 · cta C1 · footer Ft4
+   palette: grounded in shipped app icons + generate_palette.py --mood elegant --seed 7, contrast matrix in DESIGN.md
+   critique (pre-emit): show 4 · philosophy 4 · hierarchy 4 · specificity 5 · restraint 4 · variety 4 */
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Brand palette (see DESIGN.md colour contract) */
+  --color-paper: #f7f3ea;
+  --color-paper-2: #efe8da;
+  --color-ink: #1e1a11;
+  --color-ink-soft: #5f574a;
+  --color-line: #d9d1c1;
+  --color-brass: #7f6630;
+  --color-night: #131209;
+  --color-night-2: #1c1a10;
+  --color-on-night: #f3eee2;
+  --color-on-night-soft: #a8a18f;
+  --color-brass-bright: #d0ad63;
+  --color-brass-glow: #dcbb74;
+  --color-error-night: #f2a08a;
+
+  --color-qalbify: #04a38d;
+  --color-qalbify-bright: #2fd3b4;
+  --color-qalbify-ink: #036f61;
+  --color-ayyami: #d88dbc;
+  --color-ayyami-ink: #8c4a82;
+  --color-blush: #fbf1f6;
+  --color-blush-2: #f4e2ec;
+
+  /* Motion tokens */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --shadow-float: 0 1px 1px rgb(30 26 17 / 0.04), 0 12px 24px -8px rgb(30 26 17 / 0.18),
+    0 32px 64px -24px rgb(30 26 17 / 0.28);
 }
 
 @theme inline {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-gloock);
+  --font-arabic: var(--font-reem-kufi);
+  --font-heading: var(--font-gloock);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* shadcn semantic tokens mapped onto the brand palette. Light mode is locked for this marketing site. */
+:root {
+  --background: #f7f3ea;
+  --foreground: #1e1a11;
+  --card: #efe8da;
+  --card-foreground: #1e1a11;
+  --popover: #f7f3ea;
+  --popover-foreground: #1e1a11;
+  --primary: #1e1a11;
+  --primary-foreground: #f7f3ea;
+  --secondary: #efe8da;
+  --secondary-foreground: #1e1a11;
+  --muted: #efe8da;
+  --muted-foreground: #5f574a;
+  --accent: #efe8da;
+  --accent-foreground: #1e1a11;
+  --destructive: #a23b2a;
+  --border: #d9d1c1;
+  --input: #cfc6b3;
+  --ring: #7f6630;
+  --radius: 0.625rem;
+  color-scheme: light;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-paper text-ink;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: #d0ad63;
+    color: #1e1a11;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 3px;
+  }
+  .on-night :focus-visible {
+    outline-color: var(--color-brass-bright);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* The arch (mihrab niche) used to frame product visuals */
+  .arch {
+    border-radius: 999px 999px 1.5rem 1.5rem;
+  }
+  /* Outer frame 12px outside an .arch: bottom radius 1.5rem + 0.75rem keeps the corners concentric */
+  .arch-outer {
+    border-radius: 999px 999px 2.25rem 2.25rem;
+  }
+  /* A hairline paper grain so large flat areas do not read as plastic */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.1 0 0 0 0 0.07 0 0 0 0.09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .label {
+    @apply text-xs font-semibold tracking-[0.14em] uppercase;
+  }
+}
+
+/* Hero entrance (Emil: CSS keyframes run off the main thread while the page hydrates,
+   and the first frame is complete without JavaScript). Four beats: context, headline, actions, visual. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+@keyframes line-up {
+  from {
+    transform: translateY(105%);
+  }
+}
+@keyframes arch-open {
+  from {
+    clip-path: inset(100% 0% 0% 0% round 999px 999px 24px 24px);
+  }
+}
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--from-y)) rotate(var(--r));
+  }
+}
+
+.hero-screen {
+  transform: translateY(var(--to-y)) rotate(var(--r));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-rise {
+    animation: rise 700ms var(--ease-out) var(--d, 0ms) both;
+  }
+  .hero-line {
+    animation: line-up 900ms var(--ease-out) var(--d, 0ms) both;
+  }
+  .hero-arch {
+    animation: arch-open 1000ms var(--ease-in-out) 150ms both;
+  }
+  .hero-fade {
+    animation: fade 800ms var(--ease-out) var(--d, 0ms) both;
+  }
+  .hero-screen {
+    animation: screen-in 1000ms var(--ease-out) var(--d, 0ms) both;
+  }
+  .draw-in path {
+    stroke-dasharray: 1;
+    animation: draw 1400ms var(--ease-in-out) calc(var(--base, 0ms) + var(--i) * 70ms) both;
+  }
+}
+
+/* Reduced motion keeps a gentle fade and drops all movement. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise,
+  .hero-fade,
+  .hero-screen {
+    animation: fade 300ms ease both;
+  }
+}
+
+/* Liquid glass navigation.
+   Layers: backdrop (blur, saturation, and in Chromium real edge refraction via an SVG displacement map),
+   tint (adapts to the section underneath so text keeps its contrast), shine (rim light and top sheen). */
+.liquid-glass {
+  --glass-tint: rgb(247 243 234 / 0.55);
+  --glass-rim: rgb(255 255 255 / 0.95);
+  --glass-rim-low: rgb(255 255 255 / 0.35);
+  --glass-edge: rgb(30 26 17 / 0.1);
+  --glass-glow: rgb(255 255 255 / 0.55);
+  --glass-sheen: rgb(255 255 255 / 0.5);
+  box-shadow:
+    0 12px 32px -14px rgb(30 26 17 / 0.35),
+    0 2px 6px -2px rgb(30 26 17 / 0.12);
+}
+.liquid-glass[data-tone="dark"] {
+  --glass-tint: rgb(19 18 9 / 0.58);
+  --glass-rim: rgb(255 255 255 / 0.32);
+  --glass-rim-low: rgb(255 255 255 / 0.08);
+  --glass-edge: rgb(255 255 255 / 0.14);
+  --glass-glow: rgb(255 255 255 / 0.1);
+  --glass-sheen: rgb(255 255 255 / 0.12);
+  box-shadow:
+    0 12px 32px -14px rgb(0 0 0 / 0.6),
+    0 2px 6px -2px rgb(0 0 0 / 0.3);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.3);
+}
+.lg-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.lg-backdrop {
+  -webkit-backdrop-filter: blur(14px) saturate(170%);
+  backdrop-filter: blur(14px) saturate(170%);
+}
+/* Chromium renders SVG filters inside backdrop-filter: the edges refract like a lens. */
+.lg-refract .lg-backdrop {
+  backdrop-filter: url(#liquid-glass-refraction) saturate(170%);
+}
+.lg-tint {
+  background-color: var(--glass-tint);
+  transition: background-color 300ms var(--ease-out);
+}
+.lg-shine {
+  background: linear-gradient(180deg, var(--glass-sheen) 0%, transparent 52%);
+  box-shadow:
+    inset 0 1px 0 0 var(--glass-rim),
+    inset 0 -1px 0 0 var(--glass-rim-low),
+    inset 0 0 0 1px var(--glass-edge),
+    inset 0 0 18px -6px var(--glass-glow);
+  transition: box-shadow 300ms var(--ease-out);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .liquid-glass {
+    --glass-tint: rgb(247 243 234 / 0.95);
+  }
+  .liquid-glass[data-tone="dark"] {
+    --glass-tint: rgb(28 26 16 / 0.95);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .lg-backdrop,
+  .lg-refract .lg-backdrop {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .liquid-glass {
+    --glass-tint: var(--color-paper);
+  }
+  .liquid-glass[data-tone="dark"] {
+    --glass-tint: var(--color-night-2);
+  }
+}
+
+/* Lenis smooth scroll (single engine, see DESIGN.md) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
