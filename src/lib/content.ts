@@ -46,9 +46,11 @@ export const apps = {
 } as const;
 
 // Screens from the Sajdati Figma file (node 0-1), cropped to one phone height.
+// `shift` lifts a screen inside the arch (percent of its height) so bottom sheets stay in view.
 export const sajdatiScreens = [
   {
     id: "home",
+    shift: 0,
     src: "/apps/sajdati/screen-home.jpg",
     w: 756,
     h: 1636,
@@ -58,6 +60,7 @@ export const sajdatiScreens = [
   },
   {
     id: "tracker",
+    shift: 0,
     src: "/apps/sajdati/screen-tracker.jpg",
     w: 780,
     h: 1688,
@@ -67,6 +70,7 @@ export const sajdatiScreens = [
   },
   {
     id: "qaza",
+    shift: 21,
     src: "/apps/sajdati/screen-qaza.jpg",
     w: 780,
     h: 1688,
@@ -76,6 +80,7 @@ export const sajdatiScreens = [
   },
   {
     id: "rakat",
+    shift: 21,
     src: "/apps/sajdati/screen-rakat.jpg",
     w: 780,
     h: 1688,
@@ -85,6 +90,7 @@ export const sajdatiScreens = [
   },
   {
     id: "azan",
+    shift: 0,
     src: "/apps/sajdati/screen-azan.jpg",
     w: 780,
     h: 1688,
