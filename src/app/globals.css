@@ -31,6 +31,11 @@
   --color-ayyami-ink: #8c4a82;
   --color-blush: #fbf1f6;
   --color-blush-2: #f4e2ec;
+  /* Sajdati, from its Figma brand sheet: sage A9AB78, charcoal 4B4544, cream F3E5CB */
+  --color-sajdati: #a9ab78;
+  --color-sajdati-ink: #4b4544;
+  --color-cream: #fbf5e9;
+  --color-cream-2: #f3e5cb;
 
   /* Motion tokens */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);

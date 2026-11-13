@@ -34,7 +34,65 @@ export const apps = {
     installs: "10+",
     updated: "Jul 2026",
   },
+  // Not on Google Play yet: no store link or listing figures until it ships.
+  sajdati: {
+    name: "Sajdati",
+    arabic: "سجداتي",
+    meaning: "sajdati, my prostrations",
+    tagline: "A daily prayer companion, from the Adhan to the last qaza.",
+    icon: "/apps/sajdati/icon.png",
+    status: "In design",
+  },
 } as const;
+
+// Screens from the Sajdati Figma file (node 0-1), cropped to one phone height.
+export const sajdatiScreens = [
+  {
+    id: "home",
+    src: "/apps/sajdati/screen-home.jpg",
+    w: 756,
+    h: 1636,
+    title: "The next prayer, always in view",
+    body: "A countdown to the next salah, then one tap to log how you prayed the last one.",
+    alt: "Sajdati home screen with Asr as the next prayer in 1 hour 24 minutes, today's prayer times and a prompt asking how Dhuhr was prayed: alone, in jamaat, late or missed.",
+  },
+  {
+    id: "tracker",
+    src: "/apps/sajdati/screen-tracker.jpg",
+    w: 780,
+    h: 1688,
+    title: "A month of prayers",
+    body: "Alone, jamaat, late and missed, counted day by day.",
+    alt: "Sajdati prayer tracker for October 2026 with totals for alone, jamaat, late and missed prayers above a monthly calendar.",
+  },
+  {
+    id: "qaza",
+    src: "/apps/sajdati/screen-qaza.jpg",
+    w: 780,
+    h: 1688,
+    title: "Qaza, paid back",
+    body: "Mark missed prayers as made up, one salah at a time.",
+    alt: "Sajdati remove qaza sheet with a count of owed prayers for Fajr, Dhuhr, Asr, Maghrib, Isha and Witr.",
+  },
+  {
+    id: "rakat",
+    src: "/apps/sajdati/screen-rakat.jpg",
+    w: 780,
+    h: 1688,
+    title: "Hanafi guides",
+    body: "Rakat tables, sajda sahw and wudu, step by step.",
+    alt: "Sajdati rakat table showing the rakats before, fard, after and extra for each prayer, Hanafi.",
+  },
+  {
+    id: "azan",
+    src: "/apps/sajdati/screen-azan.jpg",
+    w: 780,
+    h: 1688,
+    title: "Adhan you choose",
+    body: "Pick which prayers call aloud and which stay silent.",
+    alt: "Sajdati azan reminders screen with the Adhan on for Fajr, Dhuhr, Asr and Maghrib and a silent notification for Isha.",
+  },
+] as const;
 
 export const qalbifySteps = [
   {

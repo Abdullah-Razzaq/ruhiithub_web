@@ -1,5 +1,6 @@
 import { ChapterAyyami } from "@/components/site/chapter-ayyami";
 import { ChapterQalbify } from "@/components/site/chapter-qalbify";
+import { ChapterSajdati } from "@/components/site/chapter-sajdati";
 import { Contact } from "@/components/site/contact";
 import { Faq } from "@/components/site/faq";
 import { Footer } from "@/components/site/footer";
@@ -20,6 +21,7 @@ export default function Home() {
         <Problem />
         <ChapterQalbify />
         <ChapterAyyami />
+        <ChapterSajdati />
         <Tagline />
         <Services />
         <Process />
